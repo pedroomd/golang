@@ -1,14 +1,10 @@
 package models
- 
+
 type Table struct {
-    Id   string `form:"id" json:"id"`
-    Capacity int `form:"capacity" json:"name"`
+	Id       int64 `json:"id"`
+	Capacity int64 `json:"capacity"`
 }
 
-
-
-type Response struct {
-	Status  int    `json:"status"`
-	Message string `json:"message"`
-	Data    []Table
+type SeatsResponse struct {
+	Empty_seats int64 `json:"empty_seats"`
 }

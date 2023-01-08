@@ -1,18 +1,14 @@
 package config
- 
+
 import (
-    "database/sql"
+	"database/sql"
 	"log"
 )
 
 func Connect() *sql.DB {
-    dbDriver := "mysql"
-    dbUser := "user"
-    dbPass := "password"
-    dbName := "getground"
- 
-    db, err := sql.Open(dbDriver, dbUser+":"+dbPass+"@/"+dbName)
+    db, err := sql.Open("mysql", "user:password@tcp(getgroundDB)/database")
     if err != nil {
+        
 		log.Fatal(err)
 	}
     return db
